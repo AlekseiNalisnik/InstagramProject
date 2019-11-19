@@ -1,40 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import User from './User';
+import { data } from '../../data';
 
 const Users = () => {
+
+    const name = JSON.parse(localStorage.getItem('usersInfo.name'));
+
     return (
         <div className="right">
             <User 
                 src="https://jooinn.com/images/man-19.jpg" 
                 alt="man" 
-                name="Scott"
-                min 
+                name={name}
+                 
             />
             <div className="users__block">
-                <User 
-                    src="https://jooinn.com/images/man-19.jpg" 
-                    alt="man" 
-                    name="Scott"
-                    min 
-                />
-                 <User 
-                    src="https://jooinn.com/images/man-19.jpg" 
-                    alt="man" 
-                    name="Scott"
-                    min 
-                />
-                 <User 
-                    src="https://jooinn.com/images/man-19.jpg" 
-                    alt="man" 
-                    name="Scott"
-                    min 
-                />
-                 <User 
-                    src="https://jooinn.com/images/man-19.jpg" 
-                    alt="man" 
-                    name="Scott"
-                    min 
-                />
+                {data.map(item => {
+                const {name, src, alt, id} = item;
+
+                return (
+                        <User 
+                            key={id}
+                            src={src} 
+                            alt={alt} 
+                            name={name}
+                            min 
+                        />
+                );
+                } ) }
             </div>
         </div>
     )

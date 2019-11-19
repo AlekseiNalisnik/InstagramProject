@@ -30,7 +30,7 @@ header {
 }
 
 .logo img {
-    width: 60px;
+    width: 160px;
     -webkit-filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
 }
@@ -71,8 +71,9 @@ header {
 
 .post {
     margin-bottom: 70px;
-    width: 650px;
-    min-height: 560px;
+    width: 600px;
+    /* min-height: 560px; */
+    min-height: 600px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
@@ -171,4 +172,310 @@ header {
     margin: 10px;
     height: 300px;
     object-fit: cover;
+}
+
+.profile_photo {
+    margin-bottom: 70px;
+    width: 360px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.profile_photo > img {
+    width: 100%;
+    height: 315px;
+    object-fit: cover;
+}
+
+.profile__descr {
+    padding: 0 20px;
+    margin: 0px 0 20px 0;
+}
+
+.palette_profile {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.profile__bottom_wrapper {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile__bottom_wrapper > .profile__descr {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    height: 30%;
+}
+
+.profile__button {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    /* margin-top: 20px; */
+}
+
+.profile__button__border_wrapper {
+    border: 1px solid #000;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like_button {
+    height: 40px;
+    width: 50px;
+    position: relative;
+}  
+  
+.like_button:before,
+.like_button:after {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 20px;
+    background: #000;
+    border-radius: 50px 50px 0 0;
+} 
+  
+.like_button:before {
+    left: 20px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+
+.like_button:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+} 
+
+
+
+
+
+
+
+
+.post__button {
+    margin-top: 5px;
+    display: flex;
+}
+
+
+
+
+
+
+
+.auth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 393px;
+    height: 440px;
+    background: #FFFFFF;
+    border: 1px solid #e6e6e6;
+}
+
+.reg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 393px;
+    height: 540px;
+    background: #FFFFFF;
+    border: 1px solid #e6e6e6;
+}
+
+.auth h3 {
+    margin: 10% 15%;
+    margin-top: 20%;
+    padding: 0;
+    color: #000;
+    font-size: 25px;
+}
+
+.reg h3 {
+    margin: 10% 15%;
+    margin-top: 15%;
+    padding: 0;
+    color: #000;
+    font-size: 25px;    
+}
+
+.auth p, .reg p {
+    margin-top: 15px;
+    display: inline-block;
+    margin-left: 30%;  
+}
+
+.auth_toReg, .reg_toAuth {
+    margin-top: 15px;
+    margin-left: 2%; 
+    color: #07319D;
+    text-decoration: none;
+}
+
+.auth_toReg:hover, .reg_toAuth:hover {
+    color: #0fc3f5;
+}
+
+.main_form {
+    text-align: center;
+}
+
+.main_form input, .main_form button {
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 15px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #DDE2E8;
+    box-sizing: border-box;
+}
+
+.main_form input {
+    color: #000;
+}
+
+.auth_button, .reg_button {
+    margin-top: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    background: rgba(56,151,240,1);
+    transition: .3s;
+    width: 70%; 
+    margin: auto;
+}
+
+.auth_button:hover, .reg_button:hover {
+    background: #00329e;
+}
+
+.auth_email, .auth_password  {
+    width: 70%;
+    margin: 10% 15%;
+    height: 10%;
+}
+
+.reg_password, .reg_name, .reg_fullName, .reg_email {
+    width: 70%;
+    margin: 10% 15%;
+    height: 10%;
+}
+
+.auth_password input:focus, .auth_email input:focus, 
+.reg_password input:focus, .reg_name input:focus, 
+.reg_fullName input:focus, .reg_email input:focus {
+    border-bottom: 1px solid #0fc3f5;
+}
+
+
+
+
+
+
+.heart {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    background: #c0c0c0;
+    transform: rotate(45deg);
+    margin-top: 9px;
+    margin-left: 17.5px;
+    margin-right: 20px;
+}
+
+.heart:hover {
+    cursor: pointer;
+}
+
+.heart:before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 20px;
+    top: -9px;
+    background: #c0c0c0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.heart:after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 10px;
+    top: -0.0px;
+    left: -9px;
+    background: #c0c0c0;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px; 
+}
+
+.inside_block {
+    transform: rotate(-45deg);
+    width: 18px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.hidden_block {
+    display: none;
+}
+
+.button_heart_toggler, 
+.button_heart_toggler:before,
+.button_heart_toggler:after {
+    background: red;
+}
+
+.post__comment i { 
+    font-size: 34px;
+}
+
+.post__comment, .post_like {
+    display: flex;
+}
+
+.post__comment__block {
+    margin-top: 8px;
+    margin-left: 7px;
+}
+
+.new__post__comment__block {
+    margin-top: 9px;
+    margin-left: 14px;
+}
+
+.near_block {
+    margin-top: 8px;
+}
+
+.post_descr {
+    margin-left: 15px;
+    margin-top: 15px;
 }

@@ -3,6 +3,8 @@ import User from './User';
 import ErrorMessage from './Error';
 import { getData, createData } from '../service/service';
 import { data } from '../../data';
+import LikeButton from './LikeButton';
+import Post from './Post';
 
 export default class Posts extends Component {
 
@@ -25,7 +27,6 @@ export default class Posts extends Component {
 
     onPostsLoaded = (data) => {
         this.setState({ posts: data, error: false });
-        console.log('state - ', this.state);
     }
 
     onError = () => {
@@ -35,24 +36,21 @@ export default class Posts extends Component {
 
     renderItems(arr) {
         return arr.map(item => {
-            const {name, altname, photo, src, alt, descr, id} = item;
+            const {name, altname, photo, src, alt, descr, id, likes} = item;
 
             return (
-                <div key={id} className="post">
-                    <User 
-                        src={photo} 
-                        alt={altname}
-                        name={name}
-                        min 
-                    />
-                    <img src={src} alt={alt}></img>
-                    <div className="post_name">
-                        {name}
-                    </div>
-                    <div className="post_descr">
-                        {descr}
-                    </div>
-                </div>
+                <Post 
+                    key={id}
+                    id={id}
+                    src={src} 
+                    photo={photo}
+                    alt={alt} 
+                    altname={altname}
+                    name={name}
+                    descr={descr}
+                    likes={likes}
+                    min 
+                />
             );
         });
     }

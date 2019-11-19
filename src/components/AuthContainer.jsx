@@ -8,10 +8,10 @@ class AuthContainer extends Component {
     render() {
         return (
                 <Auth 
-                        email={this.props.email} 
-                        password={this.props.password} 
-                        setEmailText={this.props.setEmailText} 
-                        setPasswordText={this.props.setPasswordText} 
+                    email={this.props.email} 
+                    password={this.props.password} 
+                    setEmailText={this.props.setEmailText} 
+                    setPasswordText={this.props.setPasswordText} 
                 />
         );
     }

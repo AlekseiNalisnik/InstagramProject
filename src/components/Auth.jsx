@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { usersInfo } from '../../usersInfo';
+import { createIsAuthorizedFlag, getUsersInfo } from '../service/service';
+import { userStatus } from '../../userStatus';
+import { Redirect } from 'react-router';
+import Header from './Header';
+
 
 export default class Auth extends Component {
     constructor(props) {
         super(props);
         this.onEmailChange = this.onEmailChange.bind(this);
         this.onPasswordChange = this.onPasswordChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+
+        this.setAuthorizingFlag = this.setAuthorizingFlag.bind(this);
+        this.state = {
+            isAuthorized: false
+        };
     }
     
 
@@ -15,34 +28,83 @@ export default class Auth extends Component {
     onPasswordChange(event) {
         this.props.setPasswordText(event.target.value);
     }
+
+    setAuthorizingFlag(flag) {
+        this.setState({ isAuthorized: flag });
+    }
+
+    onSubmit(event) {
+        event.preventDefault();
+
+        console.log('UsersInfo here! - ', usersInfo);
+
+        usersInfo.map( ({ email, password }, item) => {
+            if(email === this.props.email && password === this.props.password) {
+                this.setAuthorizingFlag(true);
+                localStorage.setItem('usersInfo.name', JSON.stringify(usersInfo[item].name));
+            }
+        });
+
+
+        // const value = document.getElementsByClassName("clear_input");
+        // Array.from(value).forEach((item) => {
+        //     item.value = ''; 
+        // });
+
+        getUsersInfo()
+            .then(() => {
+                createIsAuthorizedFlag({userStatus: this.state.isAuthorized});
+                userStatus[0] = {userStatus: this.state.isAuthorized};
+            })
+            .catch(() => console.log('Error'));
+
+      }
  
     render() {
+
         return (
-            <div className="auth">
-                <h3>Sign In</h3>
-                <form>
-                    <div>
-                        <input 
-                            type="text" 
-                            name="login" 
-                            placeholder="E-mail" 
-                            value={this.props.email} 
-                            onChange={this.onEmailChange}
-                        />
+            <div>
+                {this.state.isAuthorized ? (
+                    <Redirect to="/tape" />
+                ) : (
+                <div>
+                    <Header />
+                    <div className="auth">
+                        <p>Нет аккаунта?</p>
+                        <Link to='/registration' className="auth_toReg">
+                            Зарегистрируйтесь
+                        </Link>
+                        <h3>Вход</h3>
+                        <form className="main_form" onSubmit={this.onSubmit}>
+                            <div className="auth_email">
+                                <input 
+                                    className="clear_input"
+                                    type="text" 
+                                    name="login" 
+                                    placeholder="Имя пользователя или email" 
+                                    value={this.props.email} 
+                                    onChange={this.onEmailChange}
+                                    required
+                                />
+                            </div>
+                            <div className="auth_password">
+                                <input 
+                                    className="clear_input"
+                                    type="password" 
+                                    name="password" 
+                                    placeholder="Пароль" 
+                                    value={this.props.password} 
+                                    onChange={this.onPasswordChange}
+                                    required
+                                />
+                            </div>
+                            <div className="auth_button">
+                                <button className="auth_button">Войти</button>
+                            </div>
+                        </form>
                     </div>
-                    <div>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            placeholder="Password" 
-                            value={this.props.password} 
-                            onChange={this.onPasswordChange}
-                        />
-                    </div>
-                    <div>
-                        <button>Sign In</button>
-                    </div>
-                </form>
+                </div>
+                ) }
             </div>
         );
     };
