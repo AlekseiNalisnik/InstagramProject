@@ -35,7 +35,7 @@ export default class Palette extends Component {
 
     renderItems(arr) {
         return arr.map(item => {
-            const { src, alt, id, descr } = item;
+            const { src, alt, id, descr, likes } = item;
 
             return (
                 <div key={id} className="profile_photo">
@@ -45,8 +45,12 @@ export default class Palette extends Component {
                             {descr}
                         </div>
                         <div className="profile__button">
-                            <div className="profile__button__border_wrapper"><LikeButton profile={true} /></div> 
-                            <div className="profile__button__border_wrapper"><CommentButton profile={true} /></div>
+                            <div className="profile__button__border_wrapper">
+                                <LikeButton profile={true} likes={likes} />
+                            </div> 
+                            <div className="profile__button__border_wrapper">
+                                <CommentButton profile={true} />
+                            </div>
                         </div>
                     </div>
                 </div>
