@@ -7,12 +7,12 @@ import { bindActionCreators } from 'redux';
 class AuthContainer extends Component {
     render() {
         return (
-                <Auth 
-                    email={this.props.email} 
-                    password={this.props.password} 
-                    setEmailText={this.props.setEmailText} 
-                    setPasswordText={this.props.setPasswordText} 
-                />
+            <Auth 
+                email={this.props.email} 
+                password={this.props.password} 
+                setEmailText={this.props.setEmailText} 
+                setPasswordText={this.props.setPasswordText} 
+            />
         );
     }
 }

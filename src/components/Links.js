@@ -9,7 +9,7 @@ export default class Links extends Component {
             <ul>
                 {links.map((item) => 
                     <li key={item.id}>
-                        <Link onClick={item.click} to={item.to} className="menu__links">{item.name}</Link>
+                        <Link onClick={item.click} to={item.to} className="links__menu">{item.name}</Link>
                     </li> 
                 )}
             </ul>

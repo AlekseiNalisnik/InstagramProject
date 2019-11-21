@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 export default function LikeButton(props) {
   const [count, setCount] = useState(props.likes);
   const [flag, setFlag] = useState(false);
-
   
   return (
     <div className="post_like">

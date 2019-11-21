@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Links from './Links';
 import { userStatus } from '../../userStatus';
 
-export default class Header extends Component {
+export default class HeaderLogIn extends Component {
     render() {
 
         const links = [

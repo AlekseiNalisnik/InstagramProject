@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Posts from './Posts';
 import Users from './Users';
-import HeaderNew from './HeaderNew';
+import HeaderLogIn from './HeaderLogIn';
 
 export default function Feed() {
     return (
         <div>
-            <HeaderNew />
+            <HeaderLogIn />
             <div className="container feed">
                 <Posts />
                 <Users />

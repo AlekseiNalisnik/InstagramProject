@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import User from './User';
 import ErrorMessage from './Error';
 import { getData, createData } from '../service/service';
 import { data } from '../../data';
-import LikeButton from './LikeButton';
 import Post from './Post';
 
 export default class Posts extends Component {

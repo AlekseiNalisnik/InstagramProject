@@ -46,10 +46,8 @@ export default class Auth extends Component {
         });
 
 
-        // const value = document.getElementsByClassName("clear_input");
-        // Array.from(value).forEach((item) => {
-        //     item.value = ''; 
-        // });
+        this.props.setPasswordText('');
+        this.props.setEmailText('');
 
         getUsersInfo()
             .then(() => {
@@ -71,12 +69,12 @@ export default class Auth extends Component {
                     <Header />
                     <div className="auth">
                         <p>Нет аккаунта?</p>
-                        <Link to='/registration' className="auth_toReg">
+                        <Link to='/registration' className="auth__toReg">
                             Зарегистрируйтесь
                         </Link>
                         <h3>Вход</h3>
                         <form className="main_form" onSubmit={this.onSubmit}>
-                            <div className="auth_email">
+                            <div className="auth__email">
                                 <input 
                                     className="clear_input"
                                     type="text" 
@@ -87,7 +85,7 @@ export default class Auth extends Component {
                                     required
                                 />
                             </div>
-                            <div className="auth_password">
+                            <div className="auth__password">
                                 <input 
                                     className="clear_input"
                                     type="password" 
@@ -98,8 +96,8 @@ export default class Auth extends Component {
                                     required
                                 />
                             </div>
-                            <div className="auth_button">
-                                <button className="auth_button">Войти</button>
+                            <div className="auth__button">
+                                <button className="auth__button">Войти</button>
                             </div>
                         </form>
                     </div>

@@ -12,16 +12,16 @@ import { bindActionCreators } from 'redux';
 class RegContainer extends Component {
     render() {
         return (
-                <Reg 
-                        email={this.props.email} 
-                        password={this.props.password} 
-                        name={this.props.name}
-                        fullName={this.props.fullName}
-                        setEmailText={this.props.setEmailText} 
-                        setPasswordText={this.props.setPasswordText} 
-                        setNameText={this.props.setNameText}
-                        setFullNameText={this.props.setFullNameText}
-                />
+            <Reg 
+                email={this.props.email} 
+                password={this.props.password} 
+                name={this.props.name}
+                fullName={this.props.fullName}
+                setEmailText={this.props.setEmailText} 
+                setPasswordText={this.props.setPasswordText} 
+                setNameText={this.props.setNameText}
+                setFullNameText={this.props.setFullNameText}
+            />
         );
     }
 }

@@ -1,6 +1,6 @@
 import React, { Component  } from 'react';
 import { Link } from 'react-router-dom';
-import { createUsersInfo, getUsersInfo } from '../service/service';
+import { createUsersInfo } from '../service/service';
 import { usersInfo } from '../../usersInfo';
 import { Redirect } from 'react-router';
 import Header from './Header';
@@ -55,11 +55,13 @@ export default class Reg extends Component {
             }
         );
 
-        console.log('UsersInfo - ', usersInfo);
+        this.props.setEmailText('');
+        this.props.setPasswordText('');
+        this.props.setNameText('');
+        this.props.setFullNameText('');
 
         createUsersInfo(usersInfo)
             .then(() => this.setRegistratedFlag(true))
-            // .then(() => localStorage.setItem('usersInfo', JSON.stringify(usersInfo)))
             .catch(() => console.log('Error'));
 
       }
@@ -67,22 +69,17 @@ export default class Reg extends Component {
     render() {
         return (
             <div>
-                {       
-                        // Array.from(document.getElementsByClassName("clear_input")).forEach((item) => {
-                        //     item.value = ''; 
-                        // })
-                }
                 {this.state.isRegistrated ? <Redirect to="/" /> : (
                 <div>
                     <Header />
                     <div className="reg">
                         <p>Уже зарегистрированы?</p>
-                        <Link to='/' className="reg_toAuth">
+                        <Link to='/' className="reg__toAuth">
                             Войдите
                         </Link>
                         <h3>Регистрация</h3>
                         <form className="main_form" onSubmit={this.onSubmit}>
-                            <div className="reg_fullName">
+                            <div className="reg__fullName">
                                 <input 
                                     className="clear_input"
                                     type="text" 
@@ -93,7 +90,7 @@ export default class Reg extends Component {
                                     required
                                 />
                             </div>
-                            <div className="reg_name">
+                            <div className="reg__name">
                                 <input 
                                     className="clear_input"
                                     type="text" 
@@ -104,7 +101,7 @@ export default class Reg extends Component {
                                     required
                                 />
                             </div>
-                            <div className="reg_email">
+                            <div className="reg__email">
                                 <input 
                                     className="clear_input"
                                     type="email" 
@@ -115,7 +112,7 @@ export default class Reg extends Component {
                                     required
                                 />
                             </div>
-                            <div className="reg_password">
+                            <div className="reg__password">
                                 <input 
                                     className="clear_input"
                                     type="password" 
@@ -126,8 +123,8 @@ export default class Reg extends Component {
                                     required
                                 />
                             </div>
-                            <div className="reg_button">
-                            <button className="reg_button">Зарегистрироваться</button>
+                            <div className="reg__button">
+                            <button className="reg__button">Зарегистрироваться</button>
                             </div>
                         </form>
                     </div> 

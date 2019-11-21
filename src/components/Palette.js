@@ -4,6 +4,7 @@ import { getData, createData } from '../service/service';
 import { profile } from '../../profile';
 import LikeButton from './LikeButton';
 import CommentButton from './CommentButton';
+import { Link } from 'react-router-dom';
 
 export default class Palette extends Component {
 
@@ -49,7 +50,15 @@ export default class Palette extends Component {
                                 <LikeButton profile={true} likes={likes} />
                             </div> 
                             <div className="profile__button__border_wrapper">
-                                <CommentButton profile={true} />
+                                
+                                    <Link to={{
+                                        pathname: '/comment',
+                                        state: {
+                                            linkProps: item
+                                        }
+                                    }} className="profile__link"> 
+                                        <CommentButton comments={3} profile={true}/>
+                                    </Link> 
                             </div>
                         </div>
                     </div>
@@ -61,9 +70,19 @@ export default class Palette extends Component {
     render() {
 
         const { error, posts } = this.state;
+        const { name, altname, photo } = this.props;
 
         if(error) {
             return <ErrorMessage />
+        }
+        console.log('POSTS - ', posts);
+
+        if(posts.length > 0) {
+            posts.map(item => {
+                item.photo = photo;
+                item.altname = altname;
+                item.name = name;
+            })
         }
 
         const items = this.renderItems(posts);
