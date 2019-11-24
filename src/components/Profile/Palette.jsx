@@ -15,8 +15,9 @@ export default class Palette extends Component {
     }
 
     componentDidMount() {
+        profile[0].name = JSON.parse(localStorage.getItem('usersInfo.name'));
         const currentProfile = profile.filter(item => item.name == this.props.name);
-        console.log('currentProfile - ', profile);
+        console.log('currentProfile - ', currentProfile);
         const { info } = currentProfile[0];
         createData(info)
             .then(this.updatePosts(info))

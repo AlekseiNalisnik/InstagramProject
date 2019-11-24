@@ -1,6 +1,6 @@
 const profile = [
     {
-        name: JSON.parse(localStorage.getItem('usersInfo.name')),
+        name: '',
         info: [
             {
                 src: "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
