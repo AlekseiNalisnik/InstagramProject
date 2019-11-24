@@ -617,7 +617,7 @@ header {
     flex-direction: column;
 }
 
-.comment__comments__person__delete {
+/* .comment__comments__person__delete {
     visibility: hidden;
     width: 15px;
     height: 15px;
@@ -659,7 +659,7 @@ header {
     margin-top: -1.5px;
     background: #000;
     transform: rotate(-45deg);
-}
+} */
 
 .profile__link, .post__link, .profile__link:active, .post__link:active {
     text-decoration: none;

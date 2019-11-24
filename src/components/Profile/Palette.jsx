@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ErrorMessage from './Error';
-import { getData, createData } from '../service/service';
-import { profile } from '../../profile';
-import LikeButton from './LikeButton';
-import CommentButton from './CommentButton';
+import ErrorMessage from '../Error/Error';
+import { getData, createData } from '../../service/Service';
+import { profile } from '../../../Data/profile';
+import LikeButton from '../Comments/LikeButton';
+import CommentButton from '../Comments/CommentButton';
 import { Link } from 'react-router-dom';
+
 
 export default class Palette extends Component {
 
@@ -14,14 +15,27 @@ export default class Palette extends Component {
     }
 
     componentDidMount() {
-        createData(profile)
-            .then(this.updatePosts())
+        const currentProfile = profile.filter(item => item.name == this.props.name);
+        console.log('currentProfile - ', profile);
+        const { info } = currentProfile[0];
+        createData(info)
+            .then(this.updatePosts(info))
             .catch(this.onError);
     }
 
-    updatePosts() {
+    componentDidUpdate(prevProps) {
+        if(prevProps.name !== this.props.name) {
+            const currentProfile = profile.filter(item => item.name == this.props.name);
+            const { info } = currentProfile[0];
+            createData(info)
+                .then(this.updatePosts(info))
+                .catch(this.onError);
+        }
+    }
+
+    updatePosts(info) {
         getData()
-            .then(this.onPostsLoaded(profile))
+            .then(this.onPostsLoaded(info))
             .catch(this.onError);
     }
 
@@ -50,15 +64,14 @@ export default class Palette extends Component {
                                 <LikeButton profile={true} likes={likes} />
                             </div> 
                             <div className="profile__button__border_wrapper">
-                                
-                                    <Link to={{
-                                        pathname: '/comment',
-                                        state: {
-                                            linkProps: item
-                                        }
-                                    }} className="profile__link"> 
-                                        <CommentButton comments={3} profile={true}/>
-                                    </Link> 
+                                <Link to={{
+                                    pathname: '/comment',
+                                    state: {
+                                        linkProps: item
+                                    }
+                                }} className="profile__link"> 
+                                    <CommentButton comments={3} profile={true}/>
+                                </Link> 
                             </div>
                         </div>
                     </div>
@@ -68,14 +81,12 @@ export default class Palette extends Component {
     }
 
     render() {
-
         const { error, posts } = this.state;
         const { name, altname, photo } = this.props;
 
         if(error) {
             return <ErrorMessage />
         }
-        console.log('POSTS - ', posts);
 
         if(posts.length > 0) {
             posts.map(item => {

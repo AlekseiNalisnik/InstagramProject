@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import '../styles/Style.css';
-import AuthContainer from './AuthContainer';
-import RegContainer from './RegContainer';
+import '../../styles/Style.css';
+import AuthContainer from '../Authorization/AuthContainer';
+import RegContainer from '../Registration/RegContainer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from '../store/reducers';
-import Feed from './Feed';
-import Profile from './Profile';
+import rootReducer from '../../store/Reducers';
+import Feed from '../Posts/Feed';
+import Profile from '../Profile/Profile';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-import CommentForm from './CommentForm';
+import CommentForm from '../Comments/CommentForm';
 
 
 const store = createStore(rootReducer);

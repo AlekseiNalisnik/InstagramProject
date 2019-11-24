@@ -1,6 +1,6 @@
 import React from 'react';
 import User from './User';
-import { data } from '../../data';
+import { data } from '../../../Data/data';
 
 const Users = () => {
 
@@ -12,20 +12,19 @@ const Users = () => {
                 src="https://jooinn.com/images/man-19.jpg" 
                 alt="man" 
                 name={name}
-                 
             />
             <div className="users__block">
                 {data.map(item => {
                 const {name, src, alt, id} = item;
 
                 return (
-                        <User 
-                            key={id}
-                            src={src} 
-                            alt={alt} 
-                            name={name}
-                            min 
-                        />
+                    <User 
+                        key={id}
+                        src={src} 
+                        alt={alt} 
+                        name={name}
+                        min 
+                    />
                 );
                 } ) }
             </div>

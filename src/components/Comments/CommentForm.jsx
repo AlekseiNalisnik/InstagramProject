@@ -1,5 +1,5 @@
 import React, { Component  } from 'react';
-import HeaderLogIn from './HeaderLogIn';
+import HeaderLogIn from '../Headers/HeaderLogIn';
 import LikeButton from './LikeButton';
 import CommentButton from './CommentButton';
 import { Form, Field } from 'react-final-form';
@@ -84,6 +84,7 @@ export default class CommentForm extends Component {
                                             component="textarea" 
                                             placeholder="Добавьте комментарий..."
                                             autoComplete="off"
+                                            required
                                         />
                                         <button className="comment__button_submit" type="submit">
                                             Опубликовать

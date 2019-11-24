@@ -6,7 +6,7 @@ import {
     setPasswordText, 
     setNameText,
     setFullNameText
-} from '../store/reg/actions';
+} from '../../store/Reg/actions';
 import { bindActionCreators } from 'redux';
 
 class RegContainer extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ErrorMessage from './Error';
-import { getData, createData } from '../service/service';
-import { data } from '../../data';
+import ErrorMessage from '../Error/Error';
+import { getData, createData } from '../../service/Service';
+import { data } from '../../../Data/data';
 import Post from './Post';
 
 export default class Posts extends Component {

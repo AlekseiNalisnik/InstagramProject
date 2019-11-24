@@ -1,7 +1,7 @@
 const { join } = require('path');
 const express = require('express');
-const { data } = require('./data.js');
-const { usersInfo } = require('./usersInfo.js');
+const { data } = require('./Data/data.js');
+const { usersInfo } = require('./Data/usersInfo.js');
 
 
 const app = express();
@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/usersInfo', (req, res) => {
-    console.log('UsersInfo - ', usersInfo);
     res.send(usersInfo);
 });
 
@@ -22,7 +21,6 @@ app.post('/usersInfo', (req, res) => {
 });
 
 app.get('/data', (req, res) => {
-    // console.log(data);
     res.send(data);
 });
 

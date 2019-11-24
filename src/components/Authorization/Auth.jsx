@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { usersInfo } from '../../usersInfo';
-import { createIsAuthorizedFlag, getUsersInfo } from '../service/service';
-import { userStatus } from '../../userStatus';
+import { usersInfo } from '../../../Data/usersInfo';
+import { createIsAuthorizedFlag, getUsersInfo } from '../../service/Service';
+import { userStatus } from '../../../Data/userStatus';
 import { Redirect } from 'react-router';
-import Header from './Header';
+import Header from '../Headers/Header';
 
 
 export default class Auth extends Component {
@@ -35,8 +35,6 @@ export default class Auth extends Component {
 
     onSubmit(event) {
         event.preventDefault();
-
-        console.log('UsersInfo here! - ', usersInfo);
 
         usersInfo.map( ({ email, password }, item) => {
             if(email === this.props.email && password === this.props.password) {
@@ -79,9 +77,10 @@ export default class Auth extends Component {
                                     className="clear_input"
                                     type="text" 
                                     name="login" 
-                                    placeholder="Имя пользователя или email" 
+                                    placeholder="Email" 
                                     value={this.props.email} 
                                     onChange={this.onEmailChange}
+                                    autoComplete="off"
                                     required
                                 />
                             </div>
@@ -93,6 +92,7 @@ export default class Auth extends Component {
                                     placeholder="Пароль" 
                                     value={this.props.password} 
                                     onChange={this.onPasswordChange}
+                                    autoComplete="off"
                                     required
                                 />
                             </div>

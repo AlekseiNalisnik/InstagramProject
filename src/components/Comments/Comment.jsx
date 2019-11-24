@@ -6,18 +6,18 @@ export default class Comment extends Component {
     constructor(props) {
         super(props);
         this.renderComment = this.renderComment.bind(this);
-        this.deleteComment= this.deleteComment.bind(this);
+        // this.deleteComment= this.deleteComment.bind(this);
     }
 
-    deleteComment(event) {
-        event.preventDefault();
-        console.log('event - ', event.target);
-        this.props.comments.map((item, index) => {
-            if(index > 0) {
-                console.log('item - ', item); 
-            } 
-        });
-    }
+    // deleteComment(event) {
+    //     event.preventDefault();
+    //     console.log('event - ', event.target);
+    //     this.props.comments.map((item, index) => {
+    //         if(index > 0) {
+    //             console.log('item - ', item); 
+    //         } 
+    //     });
+    // }
     
 
     renderComment(comment, item) {
@@ -31,7 +31,7 @@ export default class Comment extends Component {
                 <div className="comment__comments__person__wrapper">
                     <input
                         className="input_name" 
-                        value={comment.name} 
+                        value={comment.name}
                         readOnly
                     />
                     {/* <button className="comment__comments__person__delete" onClick={this.deleteComment}>

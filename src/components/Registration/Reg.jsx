@@ -1,9 +1,9 @@
 import React, { Component  } from 'react';
 import { Link } from 'react-router-dom';
-import { createUsersInfo } from '../service/service';
-import { usersInfo } from '../../usersInfo';
+import { createUsersInfo } from '../../service/Service';
+import { usersInfo } from '../../../Data/usersInfo';
 import { Redirect } from 'react-router';
-import Header from './Header';
+import Header from '../Headers/Header';
 
 export default class Reg extends Component {
     constructor(props) {
@@ -87,6 +87,7 @@ export default class Reg extends Component {
                                     placeholder="Полное имя" 
                                     value={this.props.fullName}
                                     onChange={this.onFullNameChange}
+                                    autoComplete="off"
                                     required
                                 />
                             </div>
@@ -98,6 +99,7 @@ export default class Reg extends Component {
                                     placeholder="Имя пользователя"
                                     value={this.props.name}
                                     onChange={this.onNameChange}
+                                    autoComplete="off"
                                     required
                                 />
                             </div>
@@ -109,6 +111,7 @@ export default class Reg extends Component {
                                     placeholder="Email" 
                                     value={this.props.email}
                                     onChange={this.onEmailChange}
+                                    autoComplete="off"
                                     required
                                 />
                             </div>
@@ -120,6 +123,7 @@ export default class Reg extends Component {
                                     placeholder="Пароль" 
                                     value={this.props.password}
                                     onChange={this.onPasswordChange}
+                                    autoComplete="off"
                                     required
                                 />
                             </div>

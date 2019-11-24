@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Links from './Links';
-import { userStatus } from '../../userStatus';
+import { userStatus } from '../../../Data/userStatus';
 
 export default class HeaderLogIn extends Component {
     render() {
@@ -25,7 +25,6 @@ export default class HeaderLogIn extends Component {
                     Array.from(document.getElementsByClassName("clear_input")).forEach((item) => {
                         item.value = ''; 
                     });
-                    console.log('userStatus - ', userStatus[0])  
                 },
                 id: 3
             }

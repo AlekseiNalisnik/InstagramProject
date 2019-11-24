@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import User from './User';
-import LikeButton from './LikeButton';
-import CommentButton from './CommentButton';
+import LikeButton from '../Comments/LikeButton';
+import CommentButton from '../Comments/CommentButton';
 import { Link } from 'react-router-dom';
 
 const Post = (props) => {
