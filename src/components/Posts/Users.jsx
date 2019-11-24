@@ -15,12 +15,12 @@ const Users = () => {
             />
             <div className="users__block">
                 {data.map(item => {
-                const {name, src, alt, id} = item;
+                const {name, photo, alt, id} = item;
 
                 return (
                     <User 
                         key={id}
-                        src={src} 
+                        src={photo} 
                         alt={alt} 
                         name={name}
                         min 
