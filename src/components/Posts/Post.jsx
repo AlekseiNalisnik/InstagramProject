@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import User from './User';
 import LikeButton from '../Comments/LikeButton';
 import CommentButton from '../Comments/CommentButton';
@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Post = (props) => {
 
-    const { src, alt, name, descr, id, photo, altname, likes } = props;
+    const { src, alt, name, description, id, photo, altname, likes } = props;
 
     return (
         <div key={id} className="post">
@@ -18,7 +18,7 @@ const Post = (props) => {
             />
                 <img src={src} alt={alt}></img>
             <div className="post__button">
-                <LikeButton likes={likes} />
+                <LikeButton likes={likes}/>
                 <Link to={{
                     pathname: '/comment',
                     state: {
@@ -29,7 +29,7 @@ const Post = (props) => {
                 </Link>
             </div>
             <div className="post__descr">
-                {descr}
+                {description}
             </div>
         </div>
     );

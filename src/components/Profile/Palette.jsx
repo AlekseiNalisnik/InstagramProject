@@ -51,14 +51,14 @@ export default class Palette extends Component {
 
     renderItems(arr) {
         return arr.map(item => {
-            const { src, alt, id, descr, likes } = item;
+            const { src, alt, id, description, likes } = item;
 
             return (
                 <div key={id} className="profile_photo">
                     <img src={src} alt={alt} />
                     <div className="profile__bottom_wrapper">
                         <div className="profile__descr">
-                            {descr}
+                            {description}
                         </div>
                         <div className="profile__button">
                             <div className="profile__button__border_wrapper">

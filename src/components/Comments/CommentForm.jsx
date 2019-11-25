@@ -15,7 +15,7 @@ export default class CommentForm extends Component {
                     photo: this.props.location.state.linkProps.photo,
                     altname: this.props.location.state.linkProps.altname,
                     name: this.props.location.state.linkProps.name,
-                    value: this.props.location.state.linkProps.descr
+                    value: this.props.location.state.linkProps.description
                 }
             ]
         };

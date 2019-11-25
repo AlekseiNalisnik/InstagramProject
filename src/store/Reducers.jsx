@@ -4,5 +4,5 @@ import { regReducer } from './Reg/Reducers';
 
 export default combineReducers({
     auth: authReducer,
-    reg: regReducer
+    reg: regReducer,
 });

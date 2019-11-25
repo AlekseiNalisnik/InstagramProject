@@ -34,7 +34,7 @@ export default class Posts extends Component {
 
     renderItems(arr) {
         return arr.map(item => {
-            const {name, altname, photo, src, alt, descr, id, likes} = item;
+            const {name, altname, photo, src, alt, description, id, likes} = item;
 
             return (
                 <Post 
@@ -45,9 +45,8 @@ export default class Posts extends Component {
                     alt={alt} 
                     altname={altname}
                     name={name}
-                    descr={descr}
+                    description={description}
                     likes={likes}
-                    min 
                 />
             );
         });

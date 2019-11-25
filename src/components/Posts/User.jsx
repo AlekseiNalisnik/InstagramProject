@@ -9,7 +9,7 @@ const User = (props) => {
             state: {
                 linkProps: props
             }
-        }} className={min ? "user min" : "user"} >
+        }} className={min ? "user user__min" : "user"} >
             <img src={src} alt={alt} />
             <div>{name}</div>
         </Link>

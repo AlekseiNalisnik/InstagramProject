@@ -101,11 +101,6 @@ header {
     font-size: 18px;
 }
 
-/* .post__descr {
-    padding: 0 20px;
-    margin: 0px 0 20px 0;
-} */
-
 .user {
     display: flex;
     justify-content: flex-start;
@@ -128,21 +123,21 @@ header {
     font-weight: 500;
 }
 
-.min {
+.user__min {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin: 7px 0;
 }
 
-.min img {
+.user__min img {
     width: 50px;
     height: 50px;
     border-radius: 100%;
     object-fit: cover;
 }
 
-.min div {
+.user__min div {
     margin-left: 20px;
     font-size: 14px;
     font-weight: 400;
@@ -616,50 +611,6 @@ header {
     display: flex;
     flex-direction: column;
 }
-
-/* .comment__comments__person__delete {
-    visibility: hidden;
-    width: 15px;
-    height: 15px;
-    background: none;
-    border: none;
-    position: relative;
-    cursor: pointer;
-}
-
-.comment__comments__person__delete:hover {
-    visibility: visible;
-    width: 15px;
-    height: 15px;
-    background: none;
-    border: none;
-    position: relative;
-    cursor: pointer;
-}
-
-.exit1 {
-    position: absolute;
-    width: 8px;
-    height: 2px;
-    top: 50%; 
-    left: 50%;
-    margin-left: -4px;
-    margin-top: -1.5px;
-    background: #000;
-    transform: rotate(45deg);
-}
-
-.exit2 {
-    position: absolute;
-    width: 8px;
-    height: 2px;
-    top: 50%; 
-    left: 50%;
-    margin-left: -4px;
-    margin-top: -1.5px;
-    background: #000;
-    transform: rotate(-45deg);
-} */
 
 .profile__link, .post__link, .profile__link:active, .post__link:active {
     text-decoration: none;

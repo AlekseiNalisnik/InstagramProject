@@ -16,19 +16,19 @@ const store = createStore(rootReducer);
 class App extends Component {
     render() {
         return (
-            <Router>
-                <Provider store={store}>
+            <Provider store={store}>
+                <Router>
                     <div>
                         <Route path='/registration' component={RegContainer} exact />
                         <Route path='/' component={AuthContainer} exact />
                         <Route path='/comment' component={CommentForm} exact />
                     </div>
-                </Provider>
-                <div className="App">
-                    <Route path='/tape' component={Feed} exact />
-                    <Route path='/profile' component={Profile} exact /> 
-                </div>
-            </Router>
+                    <div className="App">
+                        <Route path='/tape' component={Feed} exact />
+                        <Route path='/profile' component={Profile} exact /> 
+                    </div>
+                </Router>
+            </Provider>
         );
     }
 }
